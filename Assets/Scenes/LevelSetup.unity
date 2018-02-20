@@ -304,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67088256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.31581235, z: 0.103027344}
+  m_LocalPosition: {x: 0, y: -0.31581235, z: 0.014}
   m_LocalScale: {x: 1.0934165, y: 0.51788723, z: 0.99077684}
   m_Children: []
   m_Father: {fileID: 1975266349}
@@ -373,7 +373,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126340251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 635597368}
@@ -1219,7 +1219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4767925662295032, guid: 2755ede9aee1d7147a0edbc9d983437d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.07700014
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4767925662295032, guid: 2755ede9aee1d7147a0edbc9d983437d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1605,6 +1605,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerAgent: {fileID: 1734873507}
+  bombardMode: 0
+  bombardMovementSpeed: 0.5
+  movementSpeed: 10
+  turret: {fileID: 850902235}
+  turretRotSpeed: 100
+  turretTiltSpeed: 100
+  shotForce: 100
+  turretSpawnPoint: {fileID: 1131195113}
+  projectile: {fileID: 1345682946018942, guid: c9f4cc179d5371546ba894be61aed37a, type: 2}
 --- !u!1 &1975266348
 GameObject:
   m_ObjectHideFlags: 0
