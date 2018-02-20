@@ -5,8 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
 	public GameObject player;
-	private float cameraHeight = 6.0f;
-	private float cameraOffset = -6.0f;
+	private float cameraHeight = 15.0f;
+	private float cameraOffset;
+
+	void Start(){
+		cameraOffset = -cameraHeight;
+		Camera.main.orthographicSize = cameraHeight;
+	}
 
 	// Update is called once per frame
 	void Update () {
