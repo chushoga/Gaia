@@ -83,13 +83,19 @@ public class PlayerController : MonoBehaviour {
 		// shoot function here to be accessed by the buttons
 		// **********
 		if(Input.GetMouseButtonDown(1)) {
-			GameObject clone;
-			clone = Instantiate(projectile, turretSpawnPoint.transform.position, transform.rotation);
-			clone.transform.Rotate(Vector3.left * 90);
-			clone.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * shotForce);
+			Fire(); // Fire the projectile
 		}
 		// ********************************************************
 
+	}
+
+	// Controlls the firing of the projectile
+	void Fire(){
+		// Create a bullet from the prefab
+		GameObject bullet = Instantiate(projectile, turretSpawnPoint.transform.position, turretSpawnPoint.transform.rotation);
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * shotForce;
+		bullet.transform.Rotate(Vector3.left * 90);
+		Destroy(bullet, 5.0f);
 	}
 
 	private Vector3 GetPointUnderCursor(){
