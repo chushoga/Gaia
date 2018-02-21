@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] private float turretRotSpeed = 2.0f; // Rotation speed for the turret
 	[SerializeField] private float turretTiltSpeed = 2.0f; // Tilt speed for the turret.	
 
-	public float shotForce = 100.0f; // Force of the turret shot.
+	public float shotForce = 150.0f; // Force of the turret shot.
 	public GameObject turretSpawnPoint; // SpawnPoint for the projectile.
 	public GameObject projectile; // Projectile here.
 
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour {
 		GameObject bullet = Instantiate(projectile, turretSpawnPoint.transform.position, turretSpawnPoint.transform.rotation);
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * shotForce;
 		bullet.transform.Rotate(Vector3.left * 90);
-		Destroy(bullet, 5.0f);
+
 	}
 
 	private Vector3 GetPointUnderCursor(){
