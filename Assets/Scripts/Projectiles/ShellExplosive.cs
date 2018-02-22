@@ -8,6 +8,12 @@ public class ShellExplosive : MonoBehaviour {
 	[SerializeField] private float power = 10.0f; // explosive power
 	[SerializeField] private float explosiveLift = 1.0f; // higher number the higher it will lift
 
+	void Start(){
+		Rigidbody rb = GetComponent<Rigidbody>();
+		//rb.drag = 2.0f;
+		rb.centerOfMass = new Vector3(2.0f,0.0f,2.0f);
+	}
+
 	void OnCollisionEnter(){
 		Detonate();
 	}
@@ -26,7 +32,7 @@ public class ShellExplosive : MonoBehaviour {
 
 			Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-			if(rb != null){
+			if(rb != null){				
 				rb.AddExplosionForce(power, explosionPosition, radius, explosiveLift, ForceMode.Impulse);
 			}
 		}

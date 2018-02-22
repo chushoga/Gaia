@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public float bombardMovementSpeed = 0.5f;
 	public float movementSpeed = 10f; // player movement speed
 	public GameObject turret;
+	public GameObject barrel;
 
 	// ************************************************************************************
 	// Turret
@@ -68,15 +69,22 @@ public class PlayerController : MonoBehaviour {
 
 		// Rotate Turret left
 		if(Input.GetKey(KeyCode.D)){
-			Debug.Log("Turn Me");
 			turret.transform.Rotate(Vector3.up * turretRotSpeed * Time.deltaTime);
-
 		}
 
 		// Rotate Turret right
 		if(Input.GetKey(KeyCode.A)){
 			turret.transform.Rotate(-Vector3.up * turretRotSpeed * Time.deltaTime); 
-			Debug.Log("Turn Me Left");
+		}
+
+		// Rotate Turret up
+		if(Input.GetKey(KeyCode.S)){			
+			barrel.transform.Rotate(Vector3.right * turretRotSpeed * Time.deltaTime);
+		}
+
+		// Rotate Turret down
+		if(Input.GetKey(KeyCode.W)){			
+			barrel.transform.Rotate(-Vector3.right * turretRotSpeed * Time.deltaTime);
 		}
 
 		// ********************************************************
