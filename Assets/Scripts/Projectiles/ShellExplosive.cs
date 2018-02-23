@@ -11,7 +11,11 @@ public class ShellExplosive : MonoBehaviour {
 	void Start(){
 		Rigidbody rb = GetComponent<Rigidbody>();
 		//rb.drag = 2.0f;
-		rb.centerOfMass = new Vector3(2.0f,0.0f,2.0f);
+		Debug.Log(rb.centerOfMass);
+
+		rb.centerOfMass = new Vector3(0.0f,0.0f,-5.0f);
+
+		Debug.Log(rb.centerOfMass);
 	}
 
 	void OnCollisionEnter(){
