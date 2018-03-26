@@ -8,14 +8,11 @@ public class ShellExplosive : MonoBehaviour {
 	[SerializeField] private float power = 10.0f; // explosive power
 	[SerializeField] private float explosiveLift = 1.0f; // higher number the higher it will lift
 
+	private Rigidbody rb;
+
 	void Start(){
-		Rigidbody rb = GetComponent<Rigidbody>();
-		//rb.drag = 2.0f;
-		Debug.Log(rb.centerOfMass);
-
-		rb.centerOfMass = new Vector3(0.0f,0.0f,-5.0f);
-
-		Debug.Log(rb.centerOfMass);
+		rb = GetComponent<Rigidbody>();
+//		rb.centerOfMass = new Vector3(0.0f,0.0f,-5.0f);
 	}
 
 	void OnCollisionEnter(){
@@ -43,6 +40,10 @@ public class ShellExplosive : MonoBehaviour {
 
 		Destroy(this.gameObject, 0.01f);
 
+	}
+
+	void Update(){
+		transform.rotation = Quaternion.LookRotation(rb.velocity);	
 	}
 
 }

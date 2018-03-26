@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour {
 		// Create a bullet from the prefab
 		GameObject bullet = Instantiate(projectile, turretSpawnPoint.transform.position, turretSpawnPoint.transform.rotation);
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * shotForce;
-		bullet.transform.Rotate(Vector3.left * 90);
+		//bullet.transform.Rotate(Vector3.left * 90);
 
 	}
 

@@ -30,11 +30,11 @@ public class Ammo : MonoBehaviour {
 	[SerializeField] private float explosiveForce = 0.0f;  // explosive force of shell
 	[SerializeField] private float explosiveLift = 0.0f;   // explosive lift
 	[SerializeField] private float explosiveRadius = 0.0f; // explosive radius
-	[SerialiseField] private float critChance = 1.0f;      // the crit chance for the particular shell
+	[SerializeField] private float critChance = 1.0f;      // the crit chance for the particular shell
 
 	void Start(){
 		rb = GetComponent<Rigidbody>();
-		rb.centerOfMass = cMass.transform.position;
+		//rb.centerOfMass = cMass.transform.position;
 	}
 
 
@@ -58,4 +58,6 @@ public class Ammo : MonoBehaviour {
 
 		Destroy(this.gameObject, 0.01f);
 	}
+
+
 }
